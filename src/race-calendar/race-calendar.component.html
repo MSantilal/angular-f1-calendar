@@ -1,16 +1,22 @@
-<h2>Race Calender</h2>
+<h2>F1 Schedule 2023</h2>
+<h3>2023 FIA FORMULA ONE WORLD CHAMPIONSHIP RACE CALENDER</h3>
 <button (click)="toggleCircuits()">
   <ng-container *ngIf="!isDisplayed">Show Circuits</ng-container>
   <ng-container *ngIf="isDisplayed">Hide Circuits</ng-container>
 </button>
 
 <ul *ngIf="isDisplayed">
-  <!-- Use ng-container to hide elements -->
-  <ng-container *ngFor="let circuit of circuits">
+  <ng-container *ngFor="let race of raceMeetings">
     <li>
-      <img [src]="circuit.imageSource" [alt]="circuit.name" width="100px" />
-      Race Number: {{ circuit.number }} Location: {{ circuit.location }}
+      Round {{ race.raceNumber }} {{ race.startDate | date : "dd" }}-{{
+        race.endDate | date : "dd"
+      }}
+      {{ race.startDate | date : "MMM" | uppercase }}<ng-container *ngIf="race.startDate.getMonth() !== race.endDate.getMonth()">-{{
+        race.endDate | date : "MMM" | uppercase
+      }}</ng-container>
+      {{race.circuit.countryImg}}
+      {{race.circuit.country}}
+      {{race.meetingOfficialName}}
     </li>
   </ng-container>
-
 </ul>

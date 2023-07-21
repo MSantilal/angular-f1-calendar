@@ -153,3 +153,5 @@ Classes which add additional behaviour to elements in the angular applications. 
 ## Pipes
 
 Simple functions to use with template expressions to accept an input value and return a transformed value. Can be declared once but used throughout the application. E.g. Date from 10/01/2001 to be 10th Jan 2001.
+
+Further Information can be found [here](https://angular.io/api/core/Pipe)
