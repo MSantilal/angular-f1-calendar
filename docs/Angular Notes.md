@@ -31,7 +31,9 @@
   - Available for use locally in the project directory rather than globally. In most cases, we're usually working from the project directory anyway.
     - More likely used for CI/CD pipelines?
 
-## TypeScript Configuration Files
+## App Configuration
+
+### TypeScript Configuration Files
 
 - `tsconfig.json`
   - For TypeScript language related changes
@@ -84,3 +86,33 @@
   - Focus purely on a component level
 - Global
   - Available throughout the app
+
+### App and Books Component
+
+- Within in `app.component`, the `books.component` can be added since they're declared in the same module.
+- Otherwise, this needs to be imported before it can ben used.
+
+## Interpolation
+
+- Interpolation is the embedding of expressions into marked up text.
+- Uses `{{ curly braces }}` by default.
+- Works like the string format function in dotnet
+
+## Property Binding
+
+- Again, similar to interpolation
+- Acts similarly to binding in WPF
+- Replaces `<img src={{item.Value}}...` to `<img [src]=src...`
+- Used for dynamic state change of elements on the page
+- Recommended to be used at all times
+
+## Event Binding
+
+- Lets you listen for user action and respond to actions such as keystrokes, mouse movements, clicks and/or touches
+- Used by `(input)="handleClick()"`
+
+## Two-Way Binding
+
+- Provides components in your app a way to share data
+- Used to listen for events and update values simultaneously between parent / child components
+- Used by `[(ngModel)]="targetName"` in html code
