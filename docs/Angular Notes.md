@@ -92,13 +92,15 @@
 - Within in `app.component`, the `books.component` can be added since they're declared in the same module.
 - Otherwise, this needs to be imported before it can ben used.
 
-## Interpolation
+## Bindings
+
+### Interpolation
 
 - Interpolation is the embedding of expressions into marked up text.
 - Uses `{{ curly braces }}` by default.
 - Works like the string format function in dotnet
 
-## Property Binding
+### Property Binding
 
 - Again, similar to interpolation
 - Acts similarly to binding in WPF
@@ -106,13 +108,48 @@
 - Used for dynamic state change of elements on the page
 - Recommended to be used at all times
 
-## Event Binding
+### Event Binding
 
 - Lets you listen for user action and respond to actions such as keystrokes, mouse movements, clicks and/or touches
 - Used by `(input)="handleClick()"`
 
-## Two-Way Binding
+### Two-Way Binding
 
 - Provides components in your app a way to share data
 - Used to listen for events and update values simultaneously between parent / child components
 - Used by `[(ngModel)]="targetName"` in html code
+
+## Directives
+
+Classes which add additional behaviour to elements in the angular applications. These are used to manage forms, lists, styles and what users can/cannot see.
+
+### Component
+
+- Used with a template
+
+### Attribute
+
+- Change appearance or behaviour of an element, component or another directive
+- Examples
+  - NgClass
+    - Going to change/add/remove HTML classes in template
+  - NgStyle
+    - Changing styles
+  - NgModel
+    - Helps on two-way binding
+
+### Structural Directives
+
+- Change the DOM layout by adding and removing DOM elements.
+- Require a prefix of `*` to be used
+- Examples
+  - ngIf
+    - Used as usual `if` statements.
+    - In template, utilise `<ng-container>` to not have the hidden item showing up in html source.
+  - ngFor
+    - Used as usual `for` statements
+  - ngSwitch
+
+## Pipes
+
+Simple functions to use with template expressions to accept an input value and return a transformed value. Can be declared once but used throughout the application. E.g. Date from 10/01/2001 to be 10th Jan 2001.

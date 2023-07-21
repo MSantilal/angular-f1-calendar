@@ -1,21 +1,16 @@
 <h2>Race Calender</h2>
-<button (click)="handleClick()" [disabled]="isDisabled">Show Circuits</button>
-<input type="text" [(ngModel)]="trackName"/>
-<div>{{trackName}}</div>
-<ul>
-  <li>
-    <img [src]="raceSrc1"
-    [alt]="track1"
-    width="100px"/>
-    Race Number: {{raceNumber1}}
-    Location: {{raceLocation1}}
-  </li>
+<button (click)="toggleCircuits()">
+  <ng-container *ngIf="!isDisplayed">Show Circuits</ng-container>
+  <ng-container *ngIf="isDisplayed">Hide Circuits</ng-container>
+</button>
 
-  <li>
-    <img [src]="raceSrc2"
-    [alt]="track2"
-    width="100px"/>
-    Race Number: {{raceNumber2}}
-    Location: {{raceLocation2}}
-  </li>
+<ul *ngIf="isDisplayed">
+  <!-- Use ng-container to hide elements -->
+  <ng-container *ngFor="let circuit of circuits">
+    <li>
+      <img [src]="circuit.imageSource" [alt]="circuit.name" width="100px" />
+      Race Number: {{ circuit.number }} Location: {{ circuit.location }}
+    </li>
+  </ng-container>
+
 </ul>
