@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MyApp": {
+    "AngularF1Calendar": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "MyApp:build:production"
+              "browserTarget": "AngularF1Calendar:build:production"
             },
             "development": {
-              "browserTarget": "MyApp:build:development"
+              "browserTarget": "AngularF1Calendar:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MyApp:build"
+            "browserTarget": "AngularF1Calendar:build"
           }
         },
         "test": {
