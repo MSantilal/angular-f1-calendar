@@ -8,15 +8,21 @@
 <ul *ngIf="isDisplayed">
   <ng-container *ngFor="let race of raceMeetings">
     <li>
-      Round {{ race.raceNumber }} {{ race.startDate | date : "dd" }}-{{
-        race.endDate | date : "dd"
-      }}
-      {{ race.startDate | date : "MMM" | uppercase }}<ng-container *ngIf="race.startDate.getMonth() !== race.endDate.getMonth()">-{{
-        race.endDate | date : "MMM" | uppercase
-      }}</ng-container>
-      {{race.circuit.countryImg}}
-      {{race.circuit.country}}
-      {{race.meetingOfficialName}}
+      <p>
+        Round {{ race.raceNumber }}
+        {{ race.startDate | date : "dd" }}-{{race.endDate | date : "dd" }}
+        {{ race.startDate | date : "MMM" | uppercase }}
+        <ng-container
+        *ngIf="race.startDate.getMonth() !== race.endDate.getMonth()"
+        >-{{ race.endDate | date : "MMM" | uppercase }}</ng-container>
+        <img
+        [src]="race.circuit.countryImg"
+        height="16"
+        width="28"
+        [alt]="race.circuit.country"/>
+        {{ race.circuit.country }}
+        {{ race.meetingOfficialName }}
+      </p>
     </li>
   </ng-container>
 </ul>
