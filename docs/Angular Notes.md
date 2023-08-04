@@ -197,3 +197,9 @@ Usually styling is to be carried out via the browser using the inspect tooling a
 - Each 'page' should ideally be it's own module. The 'page module' should then be imported in the 'app.module.ts' file to allow it pick it up for use.
 - In the 'page module' provide an export which outlines which component is going to be available from this module.
 - E.g. in our case, we're making Race-Calendar component available.
+
+## App-Routing
+
+- Needs to be configured to allow angular to move between components.
+- Path needs to be configured so when moving between components is reflected on address bar.
+- In app.component.html, a `<router-outlet>` needs to be added to allow the router to manage the DOM
