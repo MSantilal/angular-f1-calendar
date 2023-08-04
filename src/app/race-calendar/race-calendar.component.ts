@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meeting } from 'src/shared/interfaces/meetings-interface';
 import { MeetingService } from './meeting.service';
+import { WishListService } from '../services/wish-list.service';
 
 @Component({
   selector: 'race-calendar',
@@ -8,15 +9,13 @@ import { MeetingService } from './meeting.service';
   styleUrls: ['./race-calendar.component.css'],
 })
 export class RaceCalendarComponent implements OnInit {
-  raceMeetings!: Meeting[]
+  raceMeetings!: Meeting[];
 
-  constructor(private meetingService: MeetingService) {}
+  constructor(
+    private meetingService: MeetingService,
+  ) {}
 
   ngOnInit() {
-    this.raceMeetings = this.meetingService.getMeetings()
-  }
-
-  addToWishList(event: Meeting) {
-    console.log(event);
+    this.raceMeetings = this.meetingService.getMeetings();
   }
 }

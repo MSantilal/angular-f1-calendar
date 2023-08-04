@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { WishListService } from 'src/app/services/wish-list.service';
 import { Meeting } from 'src/shared/interfaces/meetings-interface';
 
 @Component({
@@ -8,14 +9,13 @@ import { Meeting } from 'src/shared/interfaces/meetings-interface';
 })
 export class MeetingComponent implements OnInit {
   @Input() meeting!: Meeting;
-  @Output() onMeetingSelected = new EventEmitter<Meeting>();
 
-  constructor() {}
+  constructor(private wishListService: WishListService) {}
 
   ngOnInit() {
   }
 
   addToWishList() {
-    this.onMeetingSelected.emit(this.meeting);
+    this.wishListService.add(this.meeting);
   }
 }

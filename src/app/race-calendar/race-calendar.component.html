@@ -2,6 +2,5 @@
 <h3>2023 FIA FORMULA ONE WORLD CHAMPIONSHIP RACE CALENDER</h3>
 
 <ng-container *ngFor="let meeting of raceMeetings">
-  <app-meeting [meeting]="meeting"
-  (onMeetingSelected)="addToWishList($event)"/>
+  <app-meeting [meeting]="meeting"/>
 </ng-container>
