@@ -4,7 +4,7 @@ import { MeetingService } from './meeting.service';
 import { WishListService } from '../services/wish-list.service';
 
 @Component({
-  selector: 'race-calendar',
+  selector: 'app-race-calendar',
   templateUrl: './race-calendar.component.html',
   styleUrls: ['./race-calendar.component.css'],
 })
