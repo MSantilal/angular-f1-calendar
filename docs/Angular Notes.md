@@ -192,3 +192,8 @@ Usually styling is to be carried out via the browser using the inspect tooling a
 - Service is a class with a narrow well defined purpose. Should aim to do something specific and do it will. Mostly like a resolver.
 - Component should focus only on user interactions, i.e. like a controller.
 
+## Modules
+
+- Each 'page' should ideally be it's own module. The 'page module' should then be imported in the 'app.module.ts' file to allow it pick it up for use.
+- In the 'page module' provide an export which outlines which component is going to be available from this module.
+- E.g. in our case, we're making Race-Calendar component available.

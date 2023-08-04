@@ -5,6 +5,8 @@ import { Meeting } from 'src/shared/interfaces/meetings-interface';
   providedIn: 'root',
 })
 export class MeetingService {
+
+  //Should really be getting from an API here but aim here is UI stuff only...
   getMeetings(): Meeting[] {
     return [
       {
