@@ -5,6 +5,9 @@ import { Meeting } from 'src/shared/interfaces/meetings-interface';
   providedIn: 'root',
 })
 export class WishListService {
+  get() {
+    return this.wishList;
+  }
   wishList: Meeting[] = [];
 
   constructor() {}
