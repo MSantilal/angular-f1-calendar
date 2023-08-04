@@ -186,3 +186,9 @@ Usually styling is to be carried out via the browser using the inspect tooling a
   - ctor()
     - Runs first to load up the class
   - More can be found [here](https://angular.io/guide/lifecycle-hooks)
+
+## Service
+
+- Service is a class with a narrow well defined purpose. Should aim to do something specific and do it will. Mostly like a resolver.
+- Component should focus only on user interactions, i.e. like a controller.
+
