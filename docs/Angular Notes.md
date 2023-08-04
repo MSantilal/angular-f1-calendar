@@ -155,3 +155,34 @@ Classes which add additional behaviour to elements in the angular applications. 
 Simple functions to use with template expressions to accept an input value and return a transformed value. Can be declared once but used throughout the application. E.g. Date from 10/01/2001 to be 10th Jan 2001.
 
 Further Information can be found [here](https://angular.io/api/core/Pipe)
+
+## Styling
+
+Usually styling is to be carried out via the browser using the inspect tooling as this provides a quicker way to style the necessary components. These can then be added to the `.css` file.
+
+### Styling to Note
+
+- Display: flex
+  - Flexible across the screen
+- Flex-wrap: wrap
+  - Wrap the list when space isn't available
+
+## Parent to Child / Child to Parent Relationships
+
+- Each major part of a component should be specialised into it's own component. See Race Calendar into Individual Meetings
+- To pass data through to child use `@Input()` decorator
+- To pass data back to parent, use `@Output()` decorator with an event emitter
+
+## Lifecycle Hooks
+
+- Component Instance has a lifecycle that starts when ngOnInit occurs and is then destroyed when the component is removed from the DOM.
+- Lifecycle continues with change detection, as Angular checks to see if any data-bound properties change and updates both view and component instance when needed.
+- Common Hooks
+  - ngOnChanges()
+  - ngOnInit()
+    - Fetch data from external API
+  - ngOnDestroy()
+    - Used to destroy background tasks such as timers in the component when it is removed from the DOM
+  - ctor()
+    - Runs first to load up the class
+  - More can be found [here](https://angular.io/guide/lifecycle-hooks)

@@ -1,27 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Circuit {
-  name: string;
-  location: string;
-  country: string;
-  laps: number;
-  trackImg: string;
-  countryImg: string;
-}
-
-interface Meeting {
-  raceNumber: number;
-  startDate: Date;
-  endDate: Date;
-  circuit: Circuit;
-  meetingOfficialName: string;
-  sessions: Session[];
-}
-
-interface Session {
-  name: string;
-  sessionTime: Date;
-}
+import { Meeting } from 'src/shared/interfaces/meetings-interface';
 
 @Component({
   selector: 'race-calendar',
@@ -39,7 +17,8 @@ export class RaceCalendarComponent implements OnInit {
         location: 'Sakhir',
         country: 'Bahrain',
         laps: 57,
-        countryImg:'https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/bahrain-flag.png.transform/2col-retina/image.png',
+        countryImg:
+          'https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/bahrain-flag.png.transform/2col-retina/image.png',
         trackImg:
           'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Bahrain_Circuit.png.transform/4col-retina/image.png',
       },
@@ -76,7 +55,8 @@ export class RaceCalendarComponent implements OnInit {
         location: 'Jeddah',
         country: 'Saudi Arabia',
         laps: 50,
-        countryImg: 'https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/saudi-arabia-flag.png.transform/2col-retina/image.png',
+        countryImg:
+          'https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/saudi-arabia-flag.png.transform/2col-retina/image.png',
         trackImg:
           'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Saudi_Arabia_Circuit.png.transform/7col-retina/image.png',
       },
@@ -106,14 +86,11 @@ export class RaceCalendarComponent implements OnInit {
     },
   ];
 
-  isDisplayed = true;
-
   constructor() {}
 
   ngOnInit() {}
 
-  toggleCircuits() {
-    //Can also been done on the template
-    this.isDisplayed = !this.isDisplayed;
+  addToWishList(event: Meeting) {
+    console.log(event);
   }
 }

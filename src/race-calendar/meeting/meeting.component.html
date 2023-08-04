@@ -1,0 +1,10 @@
+<li>
+  <p>Round {{ meeting.raceNumber }} {{ meeting.startDate | date : "dd" }}-{{ meeting.endDate | date : "dd" }} {{ meeting.startDate | date : "MMM" | uppercase }}</p>
+  <ng-container *ngIf="meeting.startDate.getMonth() !== meeting.endDate.getMonth()">
+    <span>-{{ meeting.endDate | date : "MMM" | uppercase }}</span>
+  </ng-container>
+  <img [src]="meeting.circuit.countryImg" height="16" width="28" [alt]="meeting.circuit.country"/>
+  <p>{{ meeting.circuit.country }}</p>
+  <p>{{ meeting.meetingOfficialName }}</p>
+  <button (click)="addToWishList()">Want to Go!</button>
+</li>

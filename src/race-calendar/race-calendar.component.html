@@ -1,28 +1,7 @@
 <h2>F1 Schedule 2023</h2>
 <h3>2023 FIA FORMULA ONE WORLD CHAMPIONSHIP RACE CALENDER</h3>
-<button (click)="toggleCircuits()">
-  <ng-container *ngIf="!isDisplayed">Show Circuits</ng-container>
-  <ng-container *ngIf="isDisplayed">Hide Circuits</ng-container>
-</button>
 
-<ul *ngIf="isDisplayed">
-  <ng-container *ngFor="let race of raceMeetings">
-    <li>
-      <p>
-        Round {{ race.raceNumber }}
-        {{ race.startDate | date : "dd" }}-{{race.endDate | date : "dd" }}
-        {{ race.startDate | date : "MMM" | uppercase }}
-        <ng-container
-        *ngIf="race.startDate.getMonth() !== race.endDate.getMonth()"
-        >-{{ race.endDate | date : "MMM" | uppercase }}</ng-container>
-        <img
-        [src]="race.circuit.countryImg"
-        height="16"
-        width="28"
-        [alt]="race.circuit.country"/>
-        {{ race.circuit.country }}
-        {{ race.meetingOfficialName }}
-      </p>
-    </li>
-  </ng-container>
-</ul>
+<ng-container *ngFor="let meeting of raceMeetings">
+  <app-meeting [meeting]="meeting"
+  (onMeetingSelected)="addToWishList($event)"/>
+</ng-container>
